@@ -15,3 +15,9 @@ for i in range(0,rows):
 print("Entered Matrix:")
 for row in arr:
     print(' '.join([str(elem) for elem in row]))
+
+ #display a matrix using method 2
+for i in range(0,rows):
+    for j in range(0,cols):
+        print(arr[i][j], end="  ")
+    print()
