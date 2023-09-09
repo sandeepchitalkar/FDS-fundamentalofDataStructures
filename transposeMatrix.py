@@ -4,8 +4,12 @@ rows = int(input("Enter total number of rows:"))
 cols = int(input("Enter total number of Column:"))
 #initailze all value to 0 in matrix name arr
 arr = [[0 for j in range(cols)] for i in range(rows)] 
-# initializing another (2 x 3) matrix to store the result.
-transpose = [[0 for j in range(cols)] for i in range(rows)] 
+
+# initializing another matrix to store the result or transpose matrix.
+# exchange is done if matrix is 2*3 then result matrix must be 3*2
+rows1=cols
+cols1=rows
+transpose = [[0 for j in range(cols1)] for i in range(rows1)] 
 
 #accepting a matrix from user
 for i in range(0,rows):
@@ -19,16 +23,16 @@ for i in range(0,rows):
         print(arr[i][j], end="  ")
     print()
 
-# iterating the rows and then columns of each row
-for i in range(0,rows):
-    for j in range(0,cols):
-        transpose[j][i] = arr[i][j]
+#transpose of original array
+print("Matrix Entered:")
+for i in range(0,cols1):
+    for j in range(0,rows1):
+        transpose[j][i]=arr[i][j]
         
-'''#transpose of a matrix in python using the map() function and zip() function.
-transpose = map(list, zip(*arr))'''
-#printing transposed array
-print("Transposed of Matrix:")
-for i in range(0,rows):
-    for j in range(0,cols):
+# print the transpose of original array
+print("Transpose of matrix:")
+for i in range(0,rows1):
+    for j in range(0,cols1):
         print(transpose[i][j], end="  ")
     print()
+ 
